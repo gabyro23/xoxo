@@ -4,9 +4,29 @@ body{
     color: 	#5c004a;
     text-align: center;
 }
-.game{
-    display: flex;
-    flex-direction:row;
+h3{
+    margin-bottom: 20px;
+}
+#game{
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#start{
+    background-color: #ffea58;
+    border: none;
+    border-radius: 3px;
+    margin-top: 40px;
+    padding: 8px;
+    color: #5c004a;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+#start:hover{
+    background-color: #c4aa03 ;
 }
 
 .box{
@@ -19,6 +39,24 @@ body{
 
 .box:hover{
     background-color: #5c004a;
+}
+
+#winner{
+    margin-top: 40px;
+}
+
+#restart{
+    background-color: #ffea58;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding: 8px;
+    color: #5c004a;
+    font-weight: bold;
+}
+
+#restart:hover{
+    background-color: #c4aa03 ;
 }
 
 
