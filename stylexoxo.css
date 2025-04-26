@@ -51,6 +51,8 @@ h2{
     border-radius: 30px;
     border: none;
     background-color: #8f0057;
+    color: white;
+    font-size: 20px;
 }
 
 .box:hover{
@@ -70,6 +72,16 @@ h2{
     margin-top: 40px;
 }
 
+#end{
+    justify-content: center;
+    flex-direction: column;
+}
+
+#outcome{
+    margin-top: 40px;
+    font-weight: bold;
+}
+
 #restart{
     background-color: #ffea58;
     border: none;
@@ -87,3 +99,4 @@ h2{
 
 
 
+/* https://www.color-hex.com/color-palette/74958 */
