@@ -67,6 +67,13 @@ function showSelection(event){
     box.textContent = playerSelection
     competition()
 }
+// function random(min, max){
+//     return Math.floor(Math.random()*(max - min + 1) + min)
+// }
+
+// function computerTurn(){
+//     let randomPlay = random
+// }
 
 function competition(){
     if (box1.textContent !== '' &&
@@ -75,7 +82,51 @@ function competition(){
         box1.textContent === box2.textContent &&
         box2.textContent === box3.textContent){
         outcome = 'You won bitch'
-        }
+    } else if (box1.textContent !== '' &&
+    box4.textContent !== '' &&
+    box7.textContent !== '' &&
+    box1.textContent === box4.textContent &&
+    box4.textContent === box7.textContent){
+    outcome = 'You won bitch'
+    } else if (box1.textContent !== '' &&
+    box5.textContent !== '' &&
+    box9.textContent !== '' &&
+    box1.textContent === box5.textContent &&
+    box5.textContent === box9.textContent){
+    outcome = 'You won bitch'
+    } else if (box2.textContent !== '' &&
+    box5.textContent !== '' &&
+    box8.textContent !== '' &&
+    box2.textContent === box5.textContent &&
+    box5.textContent === box8.textContent){
+    outcome = 'You won bitch'
+    } else if (box3.textContent !== '' &&
+    box6.textContent !== '' &&
+    box9.textContent !== '' &&
+    box3.textContent === box6.textContent &&
+    box6.textContent === box9.textContent){
+    outcome = 'You won bitch'
+    } else if (box3.textContent !== '' &&
+    box5.textContent !== '' &&
+    box7.textContent !== '' &&
+    box3.textContent === box5.textContent &&
+    box5.textContent === box7.textContent){
+    outcome = 'You won bitch'
+    } else if (box4.textContent !== '' &&
+    box5.textContent !== '' &&
+    box6.textContent !== '' &&
+    box4.textContent === box5.textContent &&
+    box5.textContent === box6.textContent){
+    outcome = 'You won bitch'
+    } else if (box7.textContent !== '' &&
+    box8.textContent !== '' &&
+    box9.textContent !== '' &&
+    box7.textContent === box8.textContent &&
+    box8.textContent === box9.textContent){
+    outcome = 'You won bitch'
+    // } else {
+    //     outcome = 'Fucking loser'
+    }
     if (outcome !== ''){
         alert(outcome);
         showOutcomeAndRestart()
@@ -85,5 +136,9 @@ function competition(){
 function showOutcomeAndRestart(){
     sectionRestart.style.display = 'inline'
     spanOutcome.innerHTML = outcome
+    restartButton.addEventListener('click', restart)
 }
 
+function restart() {
+    location.reload()
+}
