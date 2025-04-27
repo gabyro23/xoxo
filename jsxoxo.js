@@ -65,73 +65,44 @@ function showSelection(event){
     const box = event.target
     if (box.textContent !== '') return;
     box.textContent = playerSelection
+    computerTurn()
+}
+    
+function computerTurn(){
+    const emptyBoxes = Array.from(boxes).filter(box => box.textContent ==='')
+    if (emptyBoxes.length === 0) return;
+    const randomBox = Math.floor(Math.random() * emptyBoxes.length) 
+    const selctedBox = emptyBoxes[randomBox]
+    selctedBox.textContent = computerSelection
     competition()
 }
-// function random(min, max){
-//     return Math.floor(Math.random()*(max - min + 1) + min)
-// }
 
-// function computerTurn(){
-//     let randomPlay = random
-// }
-
-function competition(){
-    if (box1.textContent !== '' &&
-        box2.textContent !== '' &&
-        box3.textContent !== '' &&
-        box1.textContent === box2.textContent &&
-        box2.textContent === box3.textContent){
-        outcome = 'You won bitch'
-    } else if (box1.textContent !== '' &&
-    box4.textContent !== '' &&
-    box7.textContent !== '' &&
-    box1.textContent === box4.textContent &&
-    box4.textContent === box7.textContent){
-    outcome = 'You won bitch'
-    } else if (box1.textContent !== '' &&
-    box5.textContent !== '' &&
-    box9.textContent !== '' &&
-    box1.textContent === box5.textContent &&
-    box5.textContent === box9.textContent){
-    outcome = 'You won bitch'
-    } else if (box2.textContent !== '' &&
-    box5.textContent !== '' &&
-    box8.textContent !== '' &&
-    box2.textContent === box5.textContent &&
-    box5.textContent === box8.textContent){
-    outcome = 'You won bitch'
-    } else if (box3.textContent !== '' &&
-    box6.textContent !== '' &&
-    box9.textContent !== '' &&
-    box3.textContent === box6.textContent &&
-    box6.textContent === box9.textContent){
-    outcome = 'You won bitch'
-    } else if (box3.textContent !== '' &&
-    box5.textContent !== '' &&
-    box7.textContent !== '' &&
-    box3.textContent === box5.textContent &&
-    box5.textContent === box7.textContent){
-    outcome = 'You won bitch'
-    } else if (box4.textContent !== '' &&
-    box5.textContent !== '' &&
-    box6.textContent !== '' &&
-    box4.textContent === box5.textContent &&
-    box5.textContent === box6.textContent){
-    outcome = 'You won bitch'
-    } else if (box7.textContent !== '' &&
-    box8.textContent !== '' &&
-    box9.textContent !== '' &&
-    box7.textContent === box8.textContent &&
-    box8.textContent === box9.textContent){
-    outcome = 'You won bitch'
-    // } else {
-    //     outcome = 'Fucking loser'
-    }
-    if (outcome !== ''){
-        alert(outcome);
-        showOutcomeAndRestart()
-    }
+function competition() {
+    if (checkWin (box1, box2, box3) ||
+        checkWin (box1, box4, box7) ||
+        checkWin (box1, box5, box9) ||
+        checkWin (box2, box5, box8) ||
+        checkWin (box3, box6, box9) ||
+        checkWin (box3, box5, box7) ||
+        checkWin (box4, box5, box6) ||
+        checkWin (box7, box8, box9) ) {
+     }
+    showOutcomeAndRestart()
 }
+
+function checkWin(boxA, boxB, boxC) {
+    if (boxA.textContent !== '' &&
+        boxB.textContent !== '' &&
+        boxC.textContent !== '' &&
+        boxA.textContent === boxB.textContent &&
+        boxB.textContent === boxC.textContent) {
+            if (boxA.textContent === playerSelection){
+                outcome = 'You won bitch'
+            } else if (boxA.textContent === computerSelection)
+                outcome = 'Fucking loser'
+        }
+
+    }
 
 function showOutcomeAndRestart(){
     sectionRestart.style.display = 'inline'
