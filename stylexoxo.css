@@ -26,6 +26,22 @@ h2{
     margin-top: 60px;
 }
 
+.game-type{
+    background-color: #ffea58;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 8px;
+    color: #5c004a;
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+}
+
+.game-type:hover{
+    background-color: #c4aa03 ;
+}
+
 .xo{
     display: inline;
     background-color: #ffea58;
