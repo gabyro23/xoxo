@@ -14,19 +14,34 @@
     </div>
 
     
-    <div id="first-step">
+    <section id="first-step">
         <h2>Choose your adventure</h2>
         <button class="game-type" id="players">2 players</button>
         <button class="game-type" id="computer">Computer</button>
-    </div>
+    </section>
    
-    <div id="second-step">
+    <section id="second-step">
         <h2>Select: X or O</h2>
         <button class="xo" id="buttonX">X</button>
         <button class="xo" id="buttonO">O</button>
-    </div>
+    </section>
     
-    <div id="game">
+    <section id="game-selection">
+        <div id="computer-match">
+            <p class= "selection">Your selection is </p>
+            <p class= "selection" id="player-selection"></p>
+            <p class= "selection">Computer is </p>
+            <p class= "selection" id="computer-selection"></p>
+        </div>
+        <div id="players-match">
+            <p class= "selection">Player A is </p>
+            <p class= "selection" id="player-A-selection"></p>
+            <p class= "selection">Player B is </p>
+            <p class= "selection" id="player-B-selection"></p>
+        </div>    
+    </section>
+
+    <section id="game">
         <button class="box" id="box1"></button>
         <button class="box" id="box2"></button>
         <button class="box" id="box3"></button>
@@ -36,13 +51,12 @@
         <button class="box" id="box7"></button>
         <button class="box" id="box8"></button>
         <button class="box" id="box9"></button>
-    </div>
+    </section>
 
-    <div id="end">
+    <section id="end">
         <p id="outcome"></p>
         <button id="restart">Play again</button>
-    </div>
-    <script src="./jsxoxo.js"></script>
-    <script src="game.js"></script>
+    </section>
+    <script type="module" src="./jsxoxo.js"></script>
 </body>
 </html>
